@@ -2,7 +2,8 @@ export function createGalleryMarkup(data) {
 
     return data.map(({webformatURL, largeImageURL, tags, likes, views, comments, downloads}) =>
         `<div class="photo-card">
-        <img class="img" src=${webformatURL} alt=${tags} loading="lazy"/>
+        <a class="gallery__link" href="${largeImageURL}">
+        <img class="img" src=${webformatURL} alt=${tags} loading="lazy"/></a>
         <div class="info">
           <p class="info-item">
             <b>Likes</b>${likes}
