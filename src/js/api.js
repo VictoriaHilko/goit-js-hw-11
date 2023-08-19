@@ -9,7 +9,7 @@ import { smoothScroll } from "./smooth-scroll";
 
 const pixabayApi = new PixabayApi(40);
 
-refs = {
+const refs = {
     form: document.querySelector('.search-form'),
     searchBtn: document.querySelector('.search-btn'),
     container: document.querySelector('.gallery'),
