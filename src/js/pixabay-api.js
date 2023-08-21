@@ -8,9 +8,10 @@ export class PixabayApi {
     this.page = 1;
     this.q = null;
     this.per_page = perPage;
+    this.loadedImages = 0;
   }
 
-  async fetchPhotosByQuery() {
+  fetchPhotosByQuery() {
     const searchParams = new URLSearchParams({
       // query: this.query,
       page: this.page,
@@ -34,11 +35,15 @@ export class PixabayApi {
 
     const url = `${this.#BASE_URL}?${searchParams}`;
 
-    try {
-      const resp = await axios.get(url);
-      return resp.data;
-    } catch (error) {
-    console.log(error);
-    } 
+    return axios.get(url);
+
+
+
+    // try {
+    //   const resp = await axios.get(url);
+    //   return resp.data;
+    // } catch (error) {
+    // console.log(error);
+    // } 
+    // }
   }
-}
